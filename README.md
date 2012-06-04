@@ -76,6 +76,12 @@ and setup it as recording backend.
      sudo port install ttyrec # BSD / OSX
      shelr backend ttyrec     # BSD / OSX
 
+To enable sound recordings, you need to install `sox`.
+
+     brew install sox          # OSX
+     sudo port install sox     # BSD / OSX
+     sudo apt-get install sox  # Ubuntu / Debian
+
 ## Copyright
 
 (Э) 2010, 2011, 2012 Antono Vasiljev and
