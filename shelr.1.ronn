@@ -17,6 +17,9 @@ or other services.
   * `record`:
     Will record your terminal unless you type `exit` or Ctrl+D and
     store it to $HOME/.local/share/shelr/
+    
+    If you want sound recording pass --sound option.
+    You should have `sox` installed.
 
   * `list`:
     lists all your shellcasts.
