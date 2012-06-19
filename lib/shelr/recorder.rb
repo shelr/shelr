@@ -110,18 +110,24 @@ module Shelr
     end
 
     def start_sound_recording
-      STDOUT.puts "Sound file stored in #{record_file('sound.ogg')}"
-      @sox_pid = fork do
-        Signal.trap("INT") { puts "=> Sound recording finished!"; exit }
-        `rec -C 1 --channels 1 --rate 16k --comment 'Recorded for http://shelr.tv/' #{record_file('sound.ogg')} 2>&1`
+      if system('which rec')
+        STDOUT.puts "Sound file stored in #{record_file('sound.ogg')}"
+        @sox_pid = fork do
+          Signal.trap("INT") { puts "=> Sound recording finished!"; exit }
+          `rec -C 1 --channels 1 --rate 16k --comment 'Recorded for http://shelr.tv/' #{record_file('sound.ogg')} 2>&1`
+        end
+      else
+        STDOUT.puts "Sound recording is not available. You need to install `sox` to enable sound recordings."
       end
     end
 
     def stop_sound_recording
-      STDOUT.puts "=> Stopping sound recorder"
-      sleep 2 # otherwise record will be cropped for some reason
-      Process.kill("INT", @sox_pid)
-      Process.waitpid(@sox_pid)
+      unless system('which rec')
+        STDOUT.puts "=> Stopping sound recorder"
+        sleep 2 # otherwise record will be cropped for some reason
+        Process.kill("INT", @sox_pid)
+        Process.waitpid(@sox_pid)
+      end
     end
 
     def recorder_cmd
