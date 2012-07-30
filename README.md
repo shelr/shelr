@@ -25,7 +25,7 @@ Watch [asciicast](http://shelr.tv/records/4f49ea4ae557800001000004) for details 
 - [PPA](https://launchpad.net/~antono/+archive/shelr) for Ubuntu
 - [PKGBUILD](https://aur.archlinux.org/packages.php?ID=56945) for Arch Linux
 - [EBUILD](http://overlays.gentoo.org/proj/sunrise/browser/app-misc/shelr) for Gentoo Linux
-- [deb](http://mentors.debian.net/package/shelr) for Debian (Mentor Wanted)
+- [deb](http://mentors.debian.net/package/shelr) for Debian
 
 ## Watching other's records in your terminal
 
