@@ -90,3 +90,7 @@ To enable sound recordings, you need to install `sox`.
 See LICENSE.txt for details.
 
 [TV]: http://shelr.tv/ "Asciicasts from unix ninjas"
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shelr/shelr/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
